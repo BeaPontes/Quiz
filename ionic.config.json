@@ -1,0 +1,7 @@
+{
+  "name": "Halt",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
