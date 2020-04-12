@@ -1,0 +1,12 @@
+ <ion-card>
+  <img src="{{ questao.imagem }}">
+  <ion-card-header>
+    <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle>  -->
+    <ion-card-title>{{ questao.pergunta }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-button expand="full" (click)="respostaQuestao(resposta)" *ngFor="let resposta of questao.respostas">{{ resposta.texto }}</ion-button>
+  </ion-card-content>
+</ion-card>
+   

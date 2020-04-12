@@ -4,20 +4,23 @@ export class Quiz {
     qtdQuestoes: number;
     questoes: Array<Questao>;
 
-    numeroQuestoes(): number{
+    numeroQuestoes(): number {
         // informa o numero de questoes
         return;
     }
     getquestao(id: number): Questao {
-        // pegar questão por id
-        return;
+        return this.questoes.find(item => item.id === id);
     }
 
+    constructor() {
+        this.questoes = new Array<Questao>();
+    }
 }
 
-class Questao {
+export class Questao {
     id: number;
     imagem: string;
+    pergunta: string;
     escolhida: number;
     respostas: Array<Resposta>;
 
@@ -33,9 +36,13 @@ class Questao {
         // pegar resposta por id
         return;
     }
+
+    constructor() {
+        this.respostas = new Array<Resposta>();
+    }
 }
 
-class Resposta {
+export class Resposta {
     id: number;
     texto: string;
 }

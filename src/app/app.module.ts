@@ -9,12 +9,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import {QuizComponent} from './pages/quiz/quiz.component';
+import { QuizComponent } from './pages/quiz/quiz.component';
+import { QuestaoComponent } from './pages/questao/questao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizComponent,
+    QuestaoComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
