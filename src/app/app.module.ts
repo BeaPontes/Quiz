@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { QuestaoComponent } from './pages/questao/questao.component';
+import { FinalComponent } from './pages/final/final.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizComponent,
     QuestaoComponent,
+    FinalComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],

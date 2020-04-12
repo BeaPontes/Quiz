@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Quiz, Questao, Resposta } from '../../model/Quiz';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
@@ -10,8 +11,9 @@ export class QuizComponent implements OnInit {
 
     quiz: Quiz;
     questaoAtual: Questao;
+    level: string;
 
-    constructor() {
+    constructor(private router: Router) {
         this.quiz = new Quiz();
     }
 
@@ -120,8 +122,33 @@ export class QuizComponent implements OnInit {
         }
 
         this.questaoAtual = this.quiz.getquestao(1);
+
+        this.alteraLevel();
     }
 
     proximaQuestao() {
+
+        const idQuestaoAtual =  this.questaoAtual.id;
+        const idProximaQuestao = this.quiz.proximaQuestao(idQuestaoAtual);
+
+        if (idProximaQuestao) {
+            this.questaoAtual = this.quiz.getquestao(idProximaQuestao);
+            this.alteraLevel();
+            return;
+        }
+
+        this.irParaFinal();
+    }
+
+    alteraLevel() {
+        const idQuestaoAtual = this.questaoAtual.id;
+        const totalQuestao = this.quiz.numeroQuestoes();
+
+        this.level = `${idQuestaoAtual}/${totalQuestao}`;
+
+    }
+
+    irParaFinal() {
+        this.router.navigateByUrl('/final', { state: { quiz: this.quiz } });
     }
 }

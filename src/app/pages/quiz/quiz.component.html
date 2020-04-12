@@ -1,2 +1,11 @@
-<p>teste quiz</p>
-<app-questao [questao]="questaoAtual" (proximaQuestao)="proximaQuestao()"></app-questao>
+<div>
+    <div class="header">
+
+        
+            <p>{{ quiz.nome }}</p>
+            <p>{{ level }}</p>
+        </div>
+
+    <app-questao [questao]="questaoAtual" (proximaQuestao)="proximaQuestao()"></app-questao>
+    
+</div>

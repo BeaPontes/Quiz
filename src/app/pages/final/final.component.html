@@ -1,0 +1,10 @@
+<div>
+
+  <h1 class="titulo">{{ quiz.nome }}</h1>
+
+  <div class="respostas" *ngFor="let questao of quiz.questoes">
+    <h2>{{ questao.pergunta }}</h2>
+    <p>{{ pegarTextoEscolhida(questao.id) }}</p>
+  </div>
+
+</div>

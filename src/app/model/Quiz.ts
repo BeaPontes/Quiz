@@ -5,11 +5,22 @@ export class Quiz {
     questoes: Array<Questao>;
 
     numeroQuestoes(): number {
-        // informa o numero de questoes
-        return;
+       return this.questoes.length;
     }
     getquestao(id: number): Questao {
         return this.questoes.find(item => item.id === id);
+    }
+
+    proximaQuestao(id: number): number {
+
+        const proxima = ++id;
+        const totalQuestoes = this.numeroQuestoes();
+
+        if (proxima <= totalQuestoes) {
+            return proxima;
+        }
+
+        return;
     }
 
     constructor() {
@@ -26,10 +37,6 @@ export class Questao {
 
     getEscolhida(): number {
         // questão escolhida
-        return;
-    }
-    proximaQuestao(): number {
-        // proxima quetão
         return;
     }
     getResposta(id: number): Resposta {
